@@ -13,7 +13,7 @@ RUN ./.remy/scripts/init.sh https://github.com/madewithkoji/hello-world-webpack.
 
 # Run install commands if we have them
 RUN npm install --prefix .remy
-RUN npm install --prefix frontend
+RUN npm install --prefix .
 
 # Start remy
 CMD npm start --prefix ./.remy
