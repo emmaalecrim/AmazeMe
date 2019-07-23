@@ -2,8 +2,8 @@
  * webpack.production.js
  * 
  * What it Does:
- *   Webpack is the system that takes your react code and turns it into plain
- *   javascript. This file configures webpack to create an optimized and minified
+ *   Webpack bundles up your application for the browser.
+ *   This file configures webpack to create an optimized and minified
  *   build of your code in order to put the compiled files on a production server.
  *   
  * Things to Edit:

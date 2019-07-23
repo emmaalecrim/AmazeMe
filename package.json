@@ -1,7 +1,7 @@
 {
-  "name": "meta-project",
+  "name": "hello-world-webpack",
   "version": "1.0.0",
-  "description": "A sample project",
+  "description": "A blank Koji template with webpack bundler",
   "author": "username",
   "scripts": {
     "build": "NODE_ENV=production webpack --config ./.internals/webpack.production.js --color -p --progress --hide-modules --display-optimization-bailout",
@@ -9,23 +9,28 @@
     "prestart": "koji-tools watch &",
     "start": "webpack-dev-server --config ./.internals/webpack.development.js --hot --inline"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/madewithkoji/hello-world-webpack.git"
+  },
+  "keywords": [
+    "Koji",
+    "Hello World",
+    "Webpack"
+  ],
   "dependencies": {
     "koji-tools": "^0.5.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.3",
-    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/preset-env": "^7.4.3",
-    "babel": "^6.23.0",
-    "babel-cli": "^6.26.0",
-    "babel-loader": "^8.0.5",
-    "css-loader": "^2.1.1",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.1.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
-    "script-loader": "^0.7.2",
     "style-loader": "^0.23.1",
-    "webpack": "^4.30.0",
-    "webpack-cli": "^3.3.1",
-    "webpack-dev-server": "^3.3.1"
+    "webpack": "^4.37.0",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
   }
 }

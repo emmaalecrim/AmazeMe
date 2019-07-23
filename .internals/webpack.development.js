@@ -2,8 +2,8 @@
  * webpack.development.js
  * 
  * What it Does:
- *   Webpack is the system that this project uses to turn react code into
- *   plain javascript. This file tells webpack what to do when you want
+ *   Webpack bundles up your application for the browser.
+ *   This file tells webpack what to do when you want
  *   a development server to be created. This file sets up automatic reload
  *   as well as putting the configuration options into process.env to be
  *   picked up by the react app.
