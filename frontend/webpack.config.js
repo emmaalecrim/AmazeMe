@@ -30,12 +30,11 @@ module.exports = {
     ],
 
     devServer: {
-        contentBase: './dist',
-           compress: true,
-        port: 8080,
         host: '0.0.0.0',
-        disableHostCheck: true,
-        overlay: true,
-
+        compress: true,
+        port: 8080,
+        publicPath: '/dist/',
+        contentBase: path.resolve(__dirname, "./views")
+        
     }
 };

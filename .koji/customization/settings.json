@@ -1,9 +1,9 @@
 {
   "settings": {
     "playerImg": "https://images.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/vla98-player1.png",
-    "countdown": true,
+    "countdown": false,
     "time": 60,
-    "backgroundColor": "#ce7373"
+    "backgroundColor": "#d76b6b"
   },
   "@@editor": [
     {

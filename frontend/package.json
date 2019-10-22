@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Amazing maze game for amazing adventures of shitty controls and such",
   "scripts": {
-    "start": "webpack-dev-server --mode development --hot --inline",
+    "start": "webpack-dev-server --mode development --open ",
     "build": "webpack --mode production",
     "prestart": "koji-vcc watch &"
   },
