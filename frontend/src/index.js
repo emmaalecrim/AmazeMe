@@ -1,6 +1,5 @@
 //jshint esversion:6 
 // removed phaser: building with a local version created too much weight for koji to handle properly
-import Koji from '@withkoji/vcc';
 
 // Loading of each of the plugins
 import StartPosition from './plugins/StartPosition.js';

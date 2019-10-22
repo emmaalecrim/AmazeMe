@@ -1,4 +1,5 @@
 //jshint esversion:6
+import Koji from '@withkoji/vcc';
 
 class Preloader extends Phaser.Scene{
     constructor()
@@ -17,7 +18,7 @@ class Preloader extends Phaser.Scene{
         }
 
         //The player image will be VCC
-        this.load.spritesheet('player', './assets/player.png', {frameWidth: 20, frameHeight: 20});
+        this.load.spritesheet('player', Koji.config.settings.playerImg, {frameWidth: 20, frameHeight: 20});
         // the game paused image will also be a VCC
         this.load.image('gamepaused', './assets/gamepaused.png');
 

@@ -30,6 +30,12 @@ module.exports = {
     ],
 
     devServer: {
-        contentBase: './dist'
+        contentBase: './dist',
+           compress: true,
+        port: 8080,
+        host: '0.0.0.0',
+        disableHostCheck: true,
+        overlay: true,
+
     }
 };

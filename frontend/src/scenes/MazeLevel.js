@@ -1,5 +1,6 @@
 //jshint esversion:6
 import Level from './Level.js';
+import Koji from '@withkoji/vcc';
 
 class MazeLevel extends Level
 {
@@ -41,7 +42,7 @@ class MazeLevel extends Level
         this.addExit({ scene: 'mazelevel', x: 4080, startX: 64, startY: 64, facing: 'right' });
 
         //this is the background color to be added as VCC
-        this.cameras.main.setBackgroundColor('#005550') ; 
+        this.cameras.main.setBackgroundColor(Koji.config.settings.backgroundColor) ; 
 
         this.postCreate();
     }
