@@ -15,7 +15,7 @@ window.fadeColor = { r: 22, g: 25, b: 30 };
 window.maxSize = 640;
 
 let longestSide = Math.max(window.innerWidth, window.innerHeight);
-let zoom = 2 * Math.max(1, Math.floor(longestSide / window.maxSize));
+let zoom = 1 * Math.max(1, Math.floor(longestSide / window.maxSize));
 
 var config = {
     type: Phaser.WEBGL,
