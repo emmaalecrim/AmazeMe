@@ -34,7 +34,7 @@ module.exports = {
         compress: true,
         port: 8080,
         publicPath: '/dist/',
-        contentBase: path.resolve(__dirname, "./views")
+        contentBase: path.resolve(__dirname, "./dist")
         
     }
 };
