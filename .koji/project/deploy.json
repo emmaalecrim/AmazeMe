@@ -1,9 +1,10 @@
 {
   "deploy": {
     "frontend": {
-      "output": "build",
+      "output": "frontend/dist",
       "type": "static",
       "commands": [
+        "cd ./frontend/",
         "npm install",
         "export NODE_ENV=production && npm run build"
       ]
