@@ -1,6 +1,9 @@
 {
   "settings": {
-    "name": "Hello World"
+    "playerImg": "https://images.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/vla98-player1.png",
+    "countdown": true,
+    "time": 60,
+    "backgroundColor": "#ce7373"
   },
   "@@editor": [
     {
@@ -10,9 +13,33 @@
       "source": "settings.json",
       "fields": [
         {
-          "key": "name",
-          "name": "App name",
-          "type": "text"
+          "key": "playerImg",
+          "name": "Player Sprite",
+          "description": "The sprite you'll see as the player.",
+          "type": "image"
+        },
+        {
+          "key": "countdown",
+          "name": "Countdown ?",
+          "description": "to Countdown or not to countdown?",
+          "type": "boolean"
+        },
+        {
+          "key": "time",
+          "name": "Timer",
+          "description": "How long do you want to wait before loosing?",
+          "type": "range",
+          "typeOptions": {
+            "min": 0,
+            "max": 120,
+            "step": 30
+          }
+        },
+        {
+          "key": "backgroundColor",
+          "name": "Background Color",
+          "description": "I like pink, how bout you?",
+          "type": "color"
         }
       ]
     }
