@@ -11,7 +11,7 @@ class Player extends Phaser.Physics.Arcade.Sprite {
         scene.add.existing(this);
 
         this.setDepth(1);
-        this.setSize(Koji.config.settings.playerImgSize || 20,Koji.config.settings.playerImgSize || 20, true);
+        this.setSize(Koji.config.settings.playerImgSize ,Koji.config.settings.playerImgSize , true);
         this.setCollideWorldBounds(true);
 
         // tweak stuff
