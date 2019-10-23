@@ -1,6 +1,7 @@
 //jshint esversion:6
 // This file contains creation and updating settings for the Player Sprite.
 // This is great because it separates the sprite and it's game mechanics in two abstraction layers
+import Koji from '@withkoji/vcc';
 
 class Player extends Phaser.Physics.Arcade.Sprite {
 
@@ -10,7 +11,7 @@ class Player extends Phaser.Physics.Arcade.Sprite {
         scene.add.existing(this);
 
         this.setDepth(1);
-        this.setSize(20, 20 , true);
+        this.setSize(Koji.config.settings.playerImgSize,Koji.config.settings.playerImgSize, true);
         this.setCollideWorldBounds(true);
 
         // tweak stuff
