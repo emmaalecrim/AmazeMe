@@ -32,11 +32,11 @@ var config = {
         }
     },
     plugins:{
-        scene:[
-            {
-                key: 'simplePlatformerControls',plugin: SimplePlatformerControls, mapping: 'controls'
-            }
-        ],
+         scene:[
+             {
+                 key: 'simplePlatformerControls',plugin: SimplePlatformerControls, mapping: 'controls'
+             }
+         ],
         global: [
             {
                 key: 'startPosition', plugin: StartPosition, mapping: 'startPosition', start: true

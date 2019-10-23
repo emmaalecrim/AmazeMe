@@ -19,7 +19,7 @@ class Level extends Phaser.Scene {
         this.controls.start();
 
         this.exits = [];
-        //this.cameras.main.setBackgroundColor('#000000');
+        this.cameras.main.setBackgroundColor('#00FF00');
     }
 
     postCreate()

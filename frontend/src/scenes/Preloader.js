@@ -9,18 +9,28 @@ class Preloader extends Phaser.Scene{
 
     preload()
     {
-        //maybe add loading graphics as VCC later?
+
+        let progress = this.add.graphics();
+        this.load.on('progress', (value) => {
+            progress.clear();
+            progress.fillStyle(Koji.config.settings.backgroundColor, 1);
+            progress.fillRect(0, (this.sys.game.config.height / 2) - 30, this.sys.game.config.width * value, 60);
+        });
+        this.load.on('complete', () => {
+            progress.destroy();
+        });
         
-        this.load.image('tiles', './assets/tiles.png');
+        this.load.image('tiles', Koji.config.assets.tileset);
+        
         for(let i = 0;i < 16; i++)
         {
-            this.load.tilemapTiledJSON('map' + i, './assets/map' + i + '.json');
+            this.load.tilemapTiledJSON('map' + i, Koji.config.assets.mapArray[i]);
         }
 
-        //The player image will be VCC
+        
         this.load.spritesheet('player', Koji.config.settings.playerImg, {frameWidth: 20, frameHeight: 20});
-        // the game paused image will also be a VCC
-        this.load.image('gamepaused', './assets/gamepaused.png');
+        
+        this.load.image('gamepaused', Koji.config.assets.gamepaused);
 
     }
     
