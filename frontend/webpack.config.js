@@ -1,8 +1,7 @@
 //jshint esversion:6
 const webpack = require('webpack');
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin} = require('clean-webpack-plugin');
+
 
 module.exports = {
     entry: './src/index.js',
@@ -30,10 +29,8 @@ module.exports = {
     ],
 
     devServer: {
-        host: '0.0.0.0',
         compress: true,
         port: 8080,
-        
         contentBase: path.resolve(__dirname, "./dist")
         
     }
