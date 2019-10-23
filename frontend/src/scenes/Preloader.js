@@ -28,7 +28,7 @@ class Preloader extends Phaser.Scene{
         }
 
         
-        this.load.spritesheet('player', Koji.config.settings.playerImg, {frameWidth: 20, frameHeight: 20});
+        this.load.spritesheet('player', Koji.config.settings.playerImg, {frameWidth: Koji.config.settings.playerImgSize, frameHeight: Koji.config.settings.playerImgSize});
         
         this.load.image('gamepaused', Koji.config.assets.gamepaused);
 

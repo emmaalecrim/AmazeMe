@@ -46,7 +46,7 @@ var config = {
             }
         ]
     },
-    input:{
+    input:{ 
         gamepad: true
     },
     scene: [
