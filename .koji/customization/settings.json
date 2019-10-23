@@ -3,7 +3,8 @@
     "playerImg": "https://images.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/vla98-player1.png",
     "countdown": false,
     "time": 60,
-    "backgroundColor": "#d76b6b"
+    "backgroundColor": "#d76b6b",
+    "playerImgSize": 20
   },
   "@@editor": [
     {
@@ -17,6 +18,17 @@
           "name": "Player Sprite",
           "description": "The sprite you'll see as the player.",
           "type": "image"
+        },
+        {
+          "key": "playerImgSize",
+          "name": "PLayer Image size",
+          "description": "If you change the sprite for the player, you also need to specify it's size here.",
+          "type": "range",
+          "typeOptions": {
+            "min": 8,
+            "max": 32,
+            "step": 1
+          }
         },
         {
           "key": "countdown",
