@@ -33,7 +33,6 @@ module.exports = {
         host: '0.0.0.0',
         compress: true,
         port: 8080,
-        
         contentBase: path.resolve(__dirname, "./dist")
         
     }
