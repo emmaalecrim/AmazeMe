@@ -1,0 +1,52 @@
+{
+  "assets": {
+    "gamepaused": "https://images.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/i0eh8-gamepaused.png",
+    "tileset": "https://images.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/pbnvu-tiles.png",
+    "mapArray": [
+      "https://objects.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/p1bsc-map0.json",
+      "https://objects.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/3z8gv-map1.json",
+      "https://objects.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/5e3by-map2.json",
+      "https://objects.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/d5ysu-map3.json",
+      "https://objects.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/ejayr-map4.json",
+      "https://objects.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/9j5wy-map5.json",
+      "https://objects.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/vszy1-map6.json",
+      "https://objects.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/r5ugk-map7.json",
+      "https://objects.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/ifavq-map8.json",
+      "https://objects.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/bev8g-map9.json",
+      "https://objects.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/q225a-map10.json",
+      "https://objects.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/eyw15-map11.json",
+      "https://objects.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/np2s7-map12.json",
+      "https://objects.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/tvmjg-map13.json",
+      "https://objects.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/kalh6-map14.json",
+      "https://objects.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/f6gnm-map15.json"
+    ]
+  },
+  "@@editor": [
+    {
+      "key": "assets",
+      "name": "Assets",
+      "icon": "💾",
+      "source": "assets.json",
+      "fields": [
+        {
+          "key": "gamepaused",
+          "name": "Game paused image",
+          "description": "img to be shown when paused",
+          "type": "image"
+        },
+        {
+          "key": "tileset",
+          "name": "Tile Set",
+          "description": "set of tiles to render to texturize the map",
+          "type": "image"
+        },
+        {
+          "key": "mapArray",
+          "name": "Tilemap array",
+          "description": "Contains all the Tilemaps",
+          "type": "file[]"
+        }
+      ]
+    }
+  ]
+}
