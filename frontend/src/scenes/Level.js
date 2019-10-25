@@ -33,7 +33,7 @@ class Level extends Phaser.Scene {
     postCreate()
     {
 
-        this.gamepaused = this.add.image(this.sys.game.config.width / 2, this.sys.game.config.height / 2, 'gamepaused');
+        this.gamepaused = this.add.image(this.sys.game.config.width / 2, this.sys.game.config.height / 2, 'gamepaused').setInteractive();
         this.gamepaused.visible = false;
         this.gamepaused.setScrollFactor(0);
         this.gamepaused.setDepth(3);
@@ -140,6 +140,9 @@ class Level extends Phaser.Scene {
     {
         this.timer.paused = true;
         this.gamepaused.visible = true;
+        this.gamepaused.on("pointerdown",()=>{
+            onGameResume();
+        });
     }
 
     onGameResume()
