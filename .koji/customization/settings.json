@@ -2,7 +2,7 @@
   "settings": {
     "playerImg": "https://images.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/rhp2y-player.png",
     "countdown": true,
-    "time": 180,
+    "time": 120,
     "backgroundColor": "#d76b6b",
     "playerImgSize": 20,
     "menuIcon": "https://images.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/s51bz-playIcon.png",
