@@ -10,6 +10,7 @@ class Level extends Phaser.Scene {
 
         this.player = undefined;
         this.exits = undefined;
+        this.counter = 0;
         
     }
 
@@ -104,6 +105,7 @@ class Level extends Phaser.Scene {
                 //console.log('time to go');
                 this.leaveThroughExit(exit);
                 this.player.disappear();
+                this.counter++;
                 this.exits = [];
 
                 break;

@@ -70,7 +70,7 @@ class MazeLevel extends Level {
         if(Koji.config.settings.countdown && true)
         {
             let timeLeft = Math.round(((Koji.config.settings.time)? Koji.config.settings.time : 60) - this.timer.getElapsedSeconds());
-            this.txt.setText('Time left:' + timeLeft);
+            this.txt.setText('Time left:' + timeLeft  + '\nMazes solved:' + this.counter);
             this.txt.setColor( Koji.config.settings.textColor ||"#000");
         }
         
