@@ -97,11 +97,8 @@ class MazeLevel extends Level {
             this.player.setVelocityY(-305);
         }
 
-        if (this.input.activePointer.wasTouch) {
-            this.prefInput = 'touch';
-        }
             
-            if(this.prefInput == 'touch')
+            if(this.input.activePointer.wasTouch)
             { 
                 if(this.input.activePointer.isDown)
                 {

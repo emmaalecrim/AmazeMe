@@ -18,7 +18,11 @@ class Level extends Phaser.Scene {
         this.cameras.main.setRoundPixels(true);
         
         
-        this.cursors = this.input.keyboard.createCursorKeys();
+        this.cursors = this.input.keyboard.addKeys({
+                up: 'W',
+                left: 'A',
+                right: 'D'
+            });
         this.exits = [];
         this.cameras.main.setBackgroundColor(Koji.config.settings.backgroundColor || "#d76b6b");
 
