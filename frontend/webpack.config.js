@@ -4,6 +4,8 @@ const path = require('path');
 
 
 module.exports = {
+    watch: true,
+
     entry: './src/index.js',
     devtool: 'inline-source-map',
 
@@ -31,7 +33,8 @@ module.exports = {
     devServer: {
         compress: true,
         port: 8080,
-        contentBase: path.resolve(__dirname, "./dist")
-        
+        contentBase: path.resolve(__dirname, "./dist"),
+        host: '0.0.0.0',
+        disableHostCheck: true
     }
 };
