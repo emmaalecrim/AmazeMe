@@ -1,10 +1,13 @@
 {
   "settings": {
-    "playerImg": "https://images.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/vla98-player1.png",
-    "countdown": false,
-    "time": 60,
+    "playerImg": "https://images.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/rhp2y-player.png",
+    "countdown": true,
+    "time": 120,
     "backgroundColor": "#d76b6b",
-    "playerImgSize": 20
+    "playerImgSize": 20,
+    "menuIcon": "https://images.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/s51bz-playIcon.png",
+    "retryIcon": "https://images.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/nvuhq-retryIcon.png",
+    "textColor": "#000"
   },
   "@@editor": [
     {
@@ -42,8 +45,8 @@
           "description": "How long do you want to wait before loosing?",
           "type": "range",
           "typeOptions": {
-            "min": 0,
-            "max": 120,
+            "min": 30,
+            "max": 240,
             "step": 30
           }
         },
@@ -52,6 +55,23 @@
           "name": "Background Color",
           "description": "I like pink, how bout you?",
           "type": "color"
+        },
+        {
+          "key": "textColor",
+          "name": "countdown text color",
+          "type": "text"
+        },
+        {
+          "key": "menuIcon",
+          "name": "Start menu button icon",
+          "description": "The icon you see before the game starts",
+          "type": "image"
+        },
+        {
+          "key": "retryIcon",
+          "name": "Game over retry button icon",
+          "description": "The icon you see when you loose",
+          "type": "image"
         }
       ]
     }
