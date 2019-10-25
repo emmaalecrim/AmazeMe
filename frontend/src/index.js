@@ -3,7 +3,6 @@
 import Koji from '@withkoji/vcc';
 // Loading of each of the plugins
 import GesturesPlugin from 'phaser3-rex-plugins/plugins/gestures-plugin';
-import UIPlugin from 'phaser3-rex-plugins/templates/ui/ui-plugin.js';
 import StartPosition from './plugins/StartPosition.js';
 import MazePlugin from './plugins/MazePlugin.js';
 //Loading the scenes
@@ -39,13 +38,7 @@ var config = {
             key: 'rexGestures',
             plugin: GesturesPlugin,
             mapping: 'rexGestures'
-        },
-        {
-            key: 'rexUI',
-            plugin: UIPlugin,
-            mapping: 'rexUI'
         }
-        
         ],
         global: [
             {
