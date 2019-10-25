@@ -1,5 +1,5 @@
 //jshint esversion:6
-import Player from '../sprites/Player.js';
+import Koji from '@withkoji/vcc';
 
 class Level extends Phaser.Scene {
 
@@ -10,36 +10,61 @@ class Level extends Phaser.Scene {
 
         this.player = undefined;
         this.exits = undefined;
+        
     }
 
     create()
     {
         this.cameras.main.setRoundPixels(true);
-        // start controls
-        this.controls.start();
-
+        
+        
+        this.cursors = this.input.keyboard.createCursorKeys();
         this.exits = [];
-        this.cameras.main.setBackgroundColor('#00FF00');
+        this.cameras.main.setBackgroundColor(Koji.config.settings.backgroundColor || "#d76b6b");
+
+        this.swipe = this.rexGestures.add.swipe({
+            direction: 1, 
+            enable: true
+        });
     }
+
+    
 
     postCreate()
     {
+
         this.gamepaused = this.add.image(this.sys.game.config.width / 2, this.sys.game.config.height / 2, 'gamepaused');
         this.gamepaused.visible = false;
         this.gamepaused.setScrollFactor(0);
         this.gamepaused.setDepth(3);
 
-        //console.log(this);
+       
         this.resizeField(this.sys.game.config.width, this.sys.game.config.height);
-        this.cameras.main.flash(3000, fadeColor.r, fadeColor.g, fadeColor.b);
+        
     }
 
     addPlayer({
         x = 64,
         y = 64
     } = {}) {
-        this.player = new Player(this, x, y, 'player', 0, this.startPosition.facing);
+        
+       
+        this.player = this.physics.add.image(x, y, 'player');
+        this.player.setBounce(0.2);
+        this.player.setCollideWorldBounds(true);
+        this.player.body.setGravityY(300);
+        this.player.alive = true;
+        this.player.disappear = ()=>{
+            this.player.alive = false;
+            this.player.visible = false;
+            this.player.body.enable = false;
+        };
+        //Considering a default img that's faced to the left, flipX = true will make it face right.
+        this.player.flipX = true;
         this.cameras.main.startFollow(this.player, true);
+
+        this.timer = undefined;
+        // var timer = this.time.delayedCall(60000, callback);  // delay in ms
     }
 
     addExit({
@@ -76,6 +101,7 @@ class Level extends Phaser.Scene {
                 this.leaveThroughExit(exit);
                 this.player.disappear();
                 this.exits = [];
+
                 break;
             }
         }
@@ -96,6 +122,8 @@ class Level extends Phaser.Scene {
         }, this);
         fadeColor = { r: 5, g: 4, b: 4 };
         this.cameras.main.fadeOut(3000, fadeColor.r, fadeColor.g, fadeColor.b);
+
+        this.timer.remove();
     }
 
     resizeField(w, h)
@@ -110,13 +138,17 @@ class Level extends Phaser.Scene {
 
     onGamePause()
     {
+        this.timer.paused = true;
         this.gamepaused.visible = true;
     }
 
     onGameResume()
     {
+        this.timer.paused = false;
         this.gamepaused.visible = false;
     }
+
+  
 }
 
 export default Level;

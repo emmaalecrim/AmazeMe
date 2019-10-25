@@ -1,14 +1,17 @@
 //jshint esversion:6 
 // removed phaser: building with a local version created too much weight for koji to handle properly
-
+import Koji from '@withkoji/vcc';
 // Loading of each of the plugins
+import GesturesPlugin from 'phaser3-rex-plugins/plugins/gestures-plugin';
+import UIPlugin from 'phaser3-rex-plugins/templates/ui/ui-plugin.js';
 import StartPosition from './plugins/StartPosition.js';
-import SimplePlatformerControls from './plugins/SimplePlatformerControls.js';
 import MazePlugin from './plugins/MazePlugin.js';
 //Loading the scenes
 import Preloader from './scenes/Preloader.js';
 import Booter from './scenes/Booter.js';
 import MazeLevel from './scenes/MazeLevel.js';
+import Menu from './scenes/Menu.js';
+import GameOver from './scenes/GameOver';
 
 window.fadeColor = { r: 22, g: 25, b: 30 };
 
@@ -22,7 +25,7 @@ var config = {
     parent: 'phaser-game',
     width: window.innerWidth / zoom,
     height: window.innerHeight / zoom,
-    backgroundColor: '#000000', // great candidate to be added to VCC. Starting screen color, before Camera is init
+    backgroundColor: (Koji.config.settings.backgroundColor ||"#d76b6b"), // great candidate to be added to VCC. Starting screen color, before Camera is init
     pixelArt: true,
     zoom: zoom,
     physics:{
@@ -32,27 +35,44 @@ var config = {
         }
     },
     plugins:{
-         scene:[
-             {
-                 key: 'simplePlatformerControls',plugin: SimplePlatformerControls, mapping: 'controls'
-             }
-         ],
+        scene: [{
+            key: 'rexGestures',
+            plugin: GesturesPlugin,
+            mapping: 'rexGestures'
+        },
+        {
+            key: 'rexUI',
+            plugin: UIPlugin,
+            mapping: 'rexUI'
+        }
+        
+        ],
         global: [
             {
-                key: 'startPosition', plugin: StartPosition, mapping: 'startPosition', start: true
+                key: 'startPosition',
+                plugin: StartPosition, 
+                mapping: 'startPosition',
+                start: true
             },
             {
-                key: 'mazePlugin',plugin: MazePlugin, mapping: 'maze', start: true
+                key: 'mazePlugin',
+                plugin: MazePlugin,
+                mapping: 'maze',
+                start: true
             }
         ]
     },
     input:{ 
-        gamepad: true
+        queue: true
     },
     scene: [
+
         Booter,
         Preloader,
-        MazeLevel
+        Menu,
+        MazeLevel,
+        GameOver
+        
     ]
 };
 
