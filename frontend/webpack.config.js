@@ -35,6 +35,7 @@ module.exports = {
         port: 8080,
         contentBase: path.resolve(__dirname, "./dist"),
         host: '0.0.0.0',
-        disableHostCheck: true
+        disableHostCheck: true,
+        public: process.env.KOJI_SERVICE_URL_frontend
     }
 };
