@@ -18,9 +18,13 @@ class Booter extends Phaser.Scene
              for(let scene of this.scene.manager.scenes)
              {
                  this.blurredScene = scene.scene.key;
-              
+                 if(scene.onGamePause)
+                 {
+                     scene.onGamePause();
+                     scene.scene.pause();
+                 }
              }
-         }, this)
+         }, this);
          this.sys.game.events.on('blur', ()=> 
          {
              for(let scene of this.scene.manager.scenes)
@@ -28,29 +32,38 @@ class Booter extends Phaser.Scene
                  if(scene.scene.settings.active)
                  {
                      this.blurredScene = scene.scene.key;
-                    
+                     if(scene.onGamePause)
+                     {
+                         scene.onGamePause();
+                         scene.scene.pause();
+                     }
                  }
           
              }
-         }, this)
+         }, this);
          this.sys.game.events.on('focus', ()=> 
          {
              if(this.blurredScene)
              {
                  this.scene.resume(this.blurredScene);
                  let scene = this.scene.manager.getScene(this.blurredScene);
-                
-                 
+                 if(scene.onGameResume)
+                 {
+                     scene.onGameResume();
+                 }
              }
              this.blurredScene = undefined;
-         }, this)
+         }, this);
          this.sys.game.events.on('resume', ()=>
          {
              if(this.blurredScene)
              {
                  this.scene.resume(this.blurredScene);
                  let scene = this.scene.manager.getScene(this.blurredScene);
-                 
+                 if(scene.onGameResume)
+                 {
+                     scene.onGameResume();
+                 }
              }
              this.blurredScene = undefined;
          },this);
@@ -105,6 +118,8 @@ class Booter extends Phaser.Scene
             }
         }
     }
+
+ 
 }
 
 export default Booter;

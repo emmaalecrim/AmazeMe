@@ -30,7 +30,7 @@ class Preloader extends Phaser.Scene{
         
         this.load.image('player', Koji.config.settings.playerImg || "https://images.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/rhp2y-player.png" ); 
         
-        //this.load.image('gamepaused', Koji.config.assets.gamepaused );
+        this.load.image('gamepaused', Koji.config.assets.gamepaused );
 
         this.load.image('playIcon', Koji.config.settings.menuIcon ||"https://images.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/s51bz-playIcon.png");
 

@@ -73,11 +73,6 @@ class MazeLevel extends Level {
             this.txt.setText('Time left:' + timeLeft  + '\nMazes solved:' + this.counter);
             this.txt.setColor( Koji.config.settings.textColor ||"#000");
         }
-        else 
-        {
-            this.txt.setText('Mazes solved:' + this.counter);
-            this.txt.setColor( Koji.config.settings.textColor ||"#000");  
-        }
         
 
         // flipX = true considers that it's looking right (and that the original img is looking left)
@@ -140,8 +135,6 @@ class MazeLevel extends Level {
 
         
     }
-
-   
 
     
 }

@@ -6,7 +6,7 @@ class Level extends Phaser.Scene {
     constructor (config)
     {
         super((config) ? config : { key: 'level' });
-        //this.gamepaused = undefined;
+        this.gamepaused = undefined;
 
         this.player = undefined;
         this.exits = undefined;
@@ -38,10 +38,10 @@ class Level extends Phaser.Scene {
     postCreate()
     {
 
-        //this.gamepaused = this.add.image(this.sys.game.config.width / 2, this.sys.game.config.height / 2, 'gamepaused').setInteractive();
-        //this.gamepaused.visible = false;
-        //this.gamepaused.setScrollFactor(0);
-        //this.gamepaused.setDepth(3);
+        this.gamepaused = this.add.image(this.sys.game.config.width / 2, this.sys.game.config.height / 2, 'gamepaused').setInteractive();
+        this.gamepaused.visible = false;
+        this.gamepaused.setScrollFactor(0);
+        this.gamepaused.setDepth(3);
 
        
         this.resizeField(this.sys.game.config.width, this.sys.game.config.height);
@@ -65,12 +65,11 @@ class Level extends Phaser.Scene {
             this.player.body.enable = false;
         };
         //Considering a default img that's faced to the left, flipX = true will make it face right.
-
-        this.player.flipX = Koji.config.settings.flip;
+        this.player.flipX = true;
         this.cameras.main.startFollow(this.player, true);
 
         this.timer = undefined;
-   
+        
     }
 
     addExit({
@@ -135,15 +134,25 @@ class Level extends Phaser.Scene {
 
     resizeField(w, h)
     {
-        //console.log(w, h);
-        //this.gamepaused.x = w / 2;
-        //this.gamepaused.y = h / 2;
+       
+        this.gamepaused.x = w / 2;
+        this.gamepaused.y = h / 2;
         if (this.centerMap) {
             this.cameras.main.setBounds((this.centerMap.widthInPixels - w) / 2, (this.centerMap.heightInPixels - h) / 2, w, h);
         }
     }
 
-    
+     onGamePause()
+     {
+         this.timer.paused = true;
+         this.gamepaused.visible = true;
+     }
+     onGameResume()
+     {
+         this.timer.paused = false;
+         this.gamepaused.visible = false;
+     }
+
   
 }
 
