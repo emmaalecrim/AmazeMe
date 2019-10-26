@@ -1,6 +1,6 @@
 {
   "assets": {
-    "gamepaused": "https://images.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/i0eh8-gamepaused.png",
+    "gamepaused": "https://images.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/6dfx9-gamepaused.png",
     "tileset": "https://images.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/pbnvu-tiles.png",
     "mapArray": [
       "https://objects.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/p1bsc-map0.json",
@@ -30,8 +30,7 @@
       "fields": [
         {
           "key": "gamepaused",
-          "name": "Game paused image",
-          "description": "img to be shown when paused",
+          "name": "gamepaused img",
           "type": "image"
         },
         {

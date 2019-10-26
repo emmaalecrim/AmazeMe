@@ -7,7 +7,7 @@ module.exports = {
     watch: true,
 
     entry: './src/index.js',
-    devtool: 'inline-source-map',
+   
 
     output: {
         filename: 'project.bundle.js',
