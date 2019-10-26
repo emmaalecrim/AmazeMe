@@ -3,8 +3,8 @@
   "version": "0.0.2",
   "description": "Amazing maze game for amazing adventures",
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack.config.js --open --hot --inline",
-    "build": "webpack --mode production --config ./webpack.config.js",
+    "start": "webpack-dev-server --config ./webpack.config.js --open  --inline",
+    "build": "webpack --mode production --config ./webpack.config.js --inline",
     "prestart": "koji-vcc watch &"
   },
   "repository": {
