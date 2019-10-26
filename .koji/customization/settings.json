@@ -7,7 +7,8 @@
     "playerImgSize": 21,
     "menuIcon": "https://images.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/s51bz-playIcon.png",
     "retryIcon": "https://images.koji-cdn.com/f852518e-69be-4b7d-9c6d-c224dfe35cd0/nvuhq-retryIcon.png",
-    "textColor": "#000"
+    "textColor": "#000",
+    "flip": true
   },
   "@@editor": [
     {
@@ -34,6 +35,12 @@
           }
         },
         {
+          "key": "flip",
+          "name": "Flip img",
+          "description": "If the img is facing left, check this to make it start facing the right",
+          "type": "boolean"
+        },
+        {
           "key": "countdown",
           "name": "Countdown ?",
           "description": "to Countdown or not to countdown?",
@@ -58,8 +65,8 @@
         },
         {
           "key": "textColor",
-          "name": "countdown text color",
-          "type": "text"
+          "name": "counter text color",
+          "type": "color"
         },
         {
           "key": "menuIcon",

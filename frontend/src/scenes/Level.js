@@ -65,7 +65,8 @@ class Level extends Phaser.Scene {
             this.player.body.enable = false;
         };
         //Considering a default img that's faced to the left, flipX = true will make it face right.
-        this.player.flipX = true;
+
+        this.player.flipX = Koji.config.settings.flip;
         this.cameras.main.startFollow(this.player, true);
 
         this.timer = undefined;
