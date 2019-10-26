@@ -70,7 +70,7 @@ class Level extends Phaser.Scene {
         this.cameras.main.startFollow(this.player, true);
 
         this.timer = undefined;
-        // var timer = this.time.delayedCall(60000, callback);  // delay in ms
+   
     }
 
     addExit({
@@ -143,21 +143,7 @@ class Level extends Phaser.Scene {
         }
     }
 
-    // onGamePause()
-    // {
-    //     this.timer.paused = true;
-    //     //this.gamepaused.visible = true;
-    //     //this.gamepaused.on("pointerdown",()=>{
-    //         onGameResume();
-    //     });
-    // }
-
-    // onGameResume()
-    // {
-    //     this.timer.paused = false;
-    //     //this.gamepaused.visible = false;
-    // }
-
+    
   
 }
 

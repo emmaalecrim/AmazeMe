@@ -12,63 +12,48 @@ class Booter extends Phaser.Scene
 
     create()
     {
-        // this.sys.game.events.on('pause', ()=>
-        // {
-        //     for(let scene of this.scene.manager.scenes)
-        //     {
-        //         this.blurredScene = scene.scene.key;
-        //         if(scene.onGamePause)
-        //         {
-        //             scene.onGamePause();
-        //             scene.scene.pause();
-        //         }
-        //     }
-        // }, this);
 
-        // this.sys.game.events.on('blur', ()=> 
-        // {
-        //     for(let scene of this.scene.manager.scenes)
-        //     {
-        //         if(scene.scene.settings.active)
-        //         {
-        //             this.blurredScene = scene.scene.key;
-        //             if(scene.onGamePause)
-        //             {
-        //                 scene.onGamePause();
-        //                 scene.scene.pause();
-        //             }
-        //         }
+         this.sys.game.events.on('pause', ()=>
+         {
+             for(let scene of this.scene.manager.scenes)
+             {
+                 this.blurredScene = scene.scene.key;
+              
+             }
+         }, this)
+         this.sys.game.events.on('blur', ()=> 
+         {
+             for(let scene of this.scene.manager.scenes)
+             {
+                 if(scene.scene.settings.active)
+                 {
+                     this.blurredScene = scene.scene.key;
+                    
+                 }
+          
+             }
+         }, this)
+         this.sys.game.events.on('focus', ()=> 
+         {
+             if(this.blurredScene)
+             {
+                 this.scene.resume(this.blurredScene);
+                 let scene = this.scene.manager.getScene(this.blurredScene);
                 
-        //     }
-        // }, this);
-
-        // this.sys.game.events.on('focus', ()=> 
-        // {
-        //     if(this.blurredScene)
-        //     {
-        //         this.scene.resume(this.blurredScene);
-        //         let scene = this.scene.manager.getScene(this.blurredScene);
-        //         if(scene.onGameResume)
-        //         {
-        //             scene.onGameResume();
-        //         }
-        //     }
-        //     this.blurredScene = undefined;
-        // }, this);
-
-        // this.sys.game.events.on('resume', ()=>
-        // {
-        //     if(this.blurredScene)
-        //     {
-        //         this.scene.resume(this.blurredScene);
-        //         let scene = this.scene.manager.getScene(this.blurredScene);
-        //         if(scene.onGameResume)
-        //         {
-        //             scene.onGameResume();
-        //         }
-        //     }
-        //     this.blurredScene = undefined;
-        // },this);
+                 
+             }
+             this.blurredScene = undefined;
+         }, this)
+         this.sys.game.events.on('resume', ()=>
+         {
+             if(this.blurredScene)
+             {
+                 this.scene.resume(this.blurredScene);
+                 let scene = this.scene.manager.getScene(this.blurredScene);
+                 
+             }
+             this.blurredScene = undefined;
+         },this);
 
         window.onresize = this.onWindowResize.bind(this);
         this.onWindowResize();
