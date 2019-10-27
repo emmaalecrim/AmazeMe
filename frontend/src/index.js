@@ -24,6 +24,7 @@ var config = {
     parent: 'phaser-game',
     width: window.innerWidth / zoom,
     height: window.innerHeight / zoom,
+    mode: Phaser.Scale.FIT,
     backgroundColor: (Koji.config.settings.backgroundColor ||"#d76b6b"), // great candidate to be added to VCC. Starting screen color, before Camera is init
     pixelArt: true,
     zoom: zoom,

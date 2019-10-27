@@ -49,16 +49,7 @@ class MazeLevel extends Level {
         this.postCreate();
 
         //Timer is created here: needs the if added to check if the game needs it
-        if(Koji.config.settings.countdown && true)
-        {
-            this.timer = this.time.delayedCall(((Koji.config.settings.time) ?(Koji.config.settings.time)*1000 : 60000), ()=>{
-                this.cameras.main.flash(1500,255,0,0);
-                setTimeout(()=>{
-                    this.scene.start('gameover');
-                },600);
-                
-            });
-        }
+        
         
 
         this.txt = this.add.text(5,10);
