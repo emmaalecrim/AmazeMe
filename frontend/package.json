@@ -31,6 +31,6 @@
   "dependencies": {
     "@withkoji/vcc": "^1.0.18",
     "generate-maze": "^0.2.0",
-    "phaser3-rex-plugins": "^1.1.1"
+    "phaser3-rex-plugins": "^1.1.79"
   }
 }
